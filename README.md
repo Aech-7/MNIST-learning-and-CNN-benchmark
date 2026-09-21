@@ -2,7 +2,7 @@
 
 A comparative study of **MLPs, classical ML models, CNNs, and pretrained CNNs** for image classification and representation learning on MNIST.
 
-![MNIST Samples](results/mnist_samples.png)
+<img src="results/mnist_samples.png" width="550">
 
 The project focuses on three questions:
 
@@ -24,7 +24,7 @@ The MLP was benchmarked against Logistic Regression and Random Forest on MNIST.
 | MLP                 |     94.9% |       0.949 |
 | Logistic Regression |     92.0% |       0.920 |
 
-![MLP Comparison](results/mlp_comparison.png)
+<img src="results/mlp_comparison.png" width="550">
 
 Random Forest performed best among the three models, while the MLP provided a learned feature representation that could be analyzed further.
 
@@ -36,9 +36,20 @@ The 20-neuron hidden layer of the MLP was used as a compact feature representati
 
 t-SNE was applied to visualize how the feature space changed before and after training.
 
-![Trained vs Untrained t-SNE](results/trained_tsne.png)
-![Trained vs Untrained t-SNE](results/untrained_tsne.png)
-
+<table>
+<tr>
+<td align="center"><b>Before Training</b></td>
+<td align="center"><b>After Training</b></td>
+</tr>
+<tr>
+<td align="center">
+<img src="results/untrained_tsne.png" width="400">
+</td>
+<td align="center">
+<img src="results/trained_tsne.png" width="400">
+</td>
+</tr>
+</table>
 After training, samples from the same digit form more distinct clusters, showing that the network learns a more class-structured representation.
 
 This demonstrates that training changes not only the final classifier, but also the **geometry of the intermediate feature space**.
@@ -48,8 +59,7 @@ This demonstrates that training changes not only the final classifier, but also 
 The trained MNIST MLP was also evaluated on Fashion-MNIST without retraining.
 
 **Fashion-MNIST accuracy: 6.84%**
-
-![Fashion MNIST t-SNE](results/fashion_mnist.png)
+<img src="results/fashion_mnist.png" width="550">
 
 Despite having the same image size and number of classes, Fashion-MNIST contains completely different visual patterns. The poor performance demonstrates that the learned representation is highly **domain-specific**.
 
