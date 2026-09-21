@@ -2,6 +2,8 @@
 
 A comparative study of **MLPs, classical ML models, CNNs, and pretrained CNNs** for image classification and representation learning on MNIST.
 
+![MNIST Samples](results/mnist_samples.png)
+
 The project focuses on three questions:
 
 * How does an MLP compare with classical classifiers?
@@ -22,7 +24,7 @@ The MLP was benchmarked against Logistic Regression and Random Forest on MNIST.
 | MLP                 |     94.9% |       0.949 |
 | Logistic Regression |     92.0% |       0.920 |
 
-![MLP Comparison](results/figures/mlp_comparison.png)
+![MLP Comparison](results/mlp_comparison.png)
 
 Random Forest performed best among the three models, while the MLP provided a learned feature representation that could be analyzed further.
 
@@ -34,7 +36,8 @@ The 20-neuron hidden layer of the MLP was used as a compact feature representati
 
 t-SNE was applied to visualize how the feature space changed before and after training.
 
-![Trained vs Untrained t-SNE](results/figures/tsne_trained_vs_untrained.png)
+![Trained vs Untrained t-SNE](results/trained_tsne.png)
+![Trained vs Untrained t-SNE](results/untrained_tsne.png)
 
 After training, samples from the same digit form more distinct clusters, showing that the network learns a more class-structured representation.
 
@@ -46,7 +49,7 @@ The trained MNIST MLP was also evaluated on Fashion-MNIST without retraining.
 
 **Fashion-MNIST accuracy: 6.84%**
 
-![Fashion MNIST t-SNE](results/figures/tsne_fashion_mnist.png)
+![Fashion MNIST t-SNE](results/fashion_mnist.png)
 
 Despite having the same image size and number of classes, Fashion-MNIST contains completely different visual patterns. The poor performance demonstrates that the learned representation is highly **domain-specific**.
 
@@ -62,8 +65,6 @@ A custom CNN was trained on MNIST and compared with pretrained MobileNetV2 and E
 | MobileNetV2     |      9.42% |     0.0179 |      2.24M |       405.83 s |
 | EfficientNet-B0 |      6.82% |     0.0371 |      4.02M |      1302.33 s |
 
-![Model Comparison](results/figures/model_comparison.png)
-
 The custom CNN achieved the highest accuracy while also being the smallest and fastest model in this experiment.
 
 > **Transfer-learning note:** MobileNetV2 and EfficientNet-B0 were initialized with ImageNet-pretrained weights, but their final classification layers were replaced with randomly initialized 10-class layers and were **not fine-tuned on MNIST**. Their low accuracy therefore demonstrates the limitations of direct transfer without task-specific adaptation, rather than indicating that these architectures are inherently unsuitable for MNIST.
@@ -76,7 +77,6 @@ The custom CNN achieved **98.52% accuracy** on the MNIST test set.
 
 A confusion matrix was used to identify visually similar digits that were more difficult to distinguish.
 
-![CNN Confusion Matrix](results/figures/cnn_confusion_matrix.png)
 
 ---
 
