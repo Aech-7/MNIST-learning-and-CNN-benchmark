@@ -143,61 +143,9 @@ Fully Connected: 10
 
 ---
 
-## Repository Structure
-
-```text
-mnist-representation-learning-benchmark/
-│
-├── notebooks/
-│   └── mnist_cnn_mlp_experiments.ipynb
-│
-├── results/
-│   └── figures/
-│       ├── mlp_comparison.png
-│       ├── model_comparison.png
-│       ├── tsne_trained_vs_untrained.png
-│       ├── tsne_fashion_mnist.png
-│       └── cnn_confusion_matrix.png
-│
-├── README.md
-└── requirements.txt
-```
-
----
-
-## Running the Project
-
-```bash
-git clone https://github.com/<your-username>/mnist-representation-learning-benchmark.git
-cd mnist-representation-learning-benchmark
-
-python -m venv .venv
-source .venv/bin/activate
-
-pip install -r requirements.txt
-jupyter notebook
-```
-
-Open:
-
-```text
-notebooks/mnist_cnn_mlp_experiments.ipynb
-```
-
-The MNIST and Fashion-MNIST datasets are downloaded automatically using `torchvision`.
-
----
-
 ## Tech Stack
 
 **Python · PyTorch · Torchvision · Scikit-learn · NumPy · Matplotlib · Seaborn · t-SNE**
 
 **Models:** MLP · Logistic Regression · Random Forest · CNN · MobileNetV2 · EfficientNet-B0
 
----
-
-## Author
-
-**Harshada Kale**
-
-B.Tech Student | Machine Learning | Computer Vision | Robotics
